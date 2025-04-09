@@ -1,0 +1,42 @@
+app-footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+mat-sidenav-content{
+    background-color: #123458;
+}
+
+mat-toolbar{
+    color: #F6FCDF;
+    height: 60px;
+}
+@media (min-width: 900px){
+    #menuButton{
+        display: none;
+    }
+
+    #title{
+        margin-inline-start: 20px;
+    }
+
+    .sideMenuItem{
+        display: none;
+    }
+
+    mat-sidenav{
+        display: none;
+    }
+}
+
+@media (max-width: 900px){
+    .topMenuItem{
+        display: none;
+    }
+}
+
+.sideNavItems{
+    display: flexbox;
+    flex-direction: column;
+}

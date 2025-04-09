@@ -1,0 +1,13 @@
+.container{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #1A1A19;
+}
+
+.container a{
+    margin-left: 10px;
+}

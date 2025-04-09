@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+    <button (click)="sidenav.toggle()" mat-icon-button id="menuButton" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span id="title">Biliárd Terem időpontfoglalás</span>
+    <a mat-button routerLink='/' class="topMenuItem">Főoldal</a>
+    <a mat-button routerLink='/reservation' class="topMenuItem">Időpont Foglalás</a>
+    <a mat-button routerLink='/aboutus' class="topMenuItem">Rólunk</a>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav [fixedInViewport]="true" [fixedTopGap]="60" mode="over">
+        <div class="sideNavItems">
+            <div><a (click)="sidenav.close()" mat-button routerLink='/' class="sideMenuItem"><mat-icon>home</mat-icon>Főoldal</a></div>
+            <div><a (click)="sidenav.close()" mat-button routerLink='/reservation' class="sideMenuItem"><mat-icon>shopping_cart</mat-icon>Időpont Foglalás</a></div>
+            <div><a (click)="sidenav.close()" mat-button routerLink='/aboutus' class="sideMenuItem"><mat-icon>star</mat-icon>Rólunk</a></div>
+            <div><a (click)="sidenav.close()" mat-button routerLink='/contact' class="sideMenuItem"><mat-icon>call</mat-icon>Kapcsolat</a></div>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<app-footer></app-footer>
