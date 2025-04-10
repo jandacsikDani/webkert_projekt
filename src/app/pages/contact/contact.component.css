@@ -1,0 +1,81 @@
+.conatiner{
+    display: flex;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+#contact_detail{
+    display: grid;
+    row-gap: 10px;
+}
+
+#contact_detail div{
+    align-self: center;
+}
+
+#openHours{
+    display: grid;
+    row-gap: 5px;
+    justify-self: left;
+}
+
+#formContainer{
+    background-color: #1A1A19;
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+#formContainer > button{
+    max-width: 200px;
+}
+
+.conatiner > div:last-child{
+    width: 100%;
+}
+
+/*Desktop*/
+@media (min-width: 900px){
+    .conatiner{
+        flex-direction: row;
+        width: 80%;
+    }
+    #contact_detail{
+        grid-template-columns: 15vw auto;
+    }
+    #openHours{
+        grid-template-columns: 8vw 15vw;
+        justify-self: left;
+    }
+
+    .conatiner > div:first-child{
+        padding-right: 15px;
+        border-right: 1px solid whitesmoke;
+    }
+
+    .conatiner > div:last-child{
+        padding-left: 15px;
+    }
+}
+
+/*Mobil*/
+@media (max-width: 900px){
+    .conatiner{
+        flex-direction: column;
+        padding-left: 15px;
+        overflow-x: hidden;
+        width: 100%;
+    }
+    #contact_detail{
+        grid-template-columns: 150px auto;
+    }
+    #openHours{
+        column-gap: 15px;
+        grid-template-columns: 15vw auto;
+    }
+
+    .conatiner > div:last-child{
+        width: max-content;
+    }
+}

@@ -1,5 +1,53 @@
 <div class="conatiner">
     <div>
-        
+        <h2>Elérhetőségünk</h2>
+        <div id="contact_detail">
+            <div><mat-icon>call</mat-icon>Telefon</div>
+            <div>06 1 366 512</div>
+            <div><mat-icon>mail</mat-icon>E-Mail</div>
+            <div>info&#64;zoldasztal.hu</div>
+            <div><mat-icon>calendar_month</mat-icon>Nyitvatartás</div>
+            <div id="openHours">
+                <div>Hétfő</div>
+                <div>ZÁRVA</div>
+                <div>Kedd</div>
+                <div>10:00 - 22:00</div>
+                <div>Szerda</div>
+                <div>10:00 - 22:00</div>
+                <div>Csütörtök</div>
+                <div>11:00 - 22:00</div>
+                <div>Péntek</div>
+                <div>10:00 - 23:00</div>
+                <div>Szombat</div>
+                <div>10:00 - 23:00</div>
+                <div>Vasárnap</div>
+                <div>10:00 - 0:00</div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h2>Kérdésed van? Tedd fel nekünk!</h2>
+        <div>
+            <h3>Üzenet küldése</h3>
+            <div id="formContainer">
+                <mat-form-field>
+                    <mat-label>Név</mat-label>
+                    <input matInput type="text" [formControl]="name" id="nameInput">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>E-mail cím</mat-label>
+                    <input matInput type="email" [formControl]="email" id="emailInput">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Telefonszám</mat-label>
+                    <input matInput type="tel" id="phonenum" [formControl]="phone">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Üzenet</mat-label>
+                    <textarea matInput [formControl]="message" id="message"></textarea>
+                </mat-form-field>
+                <button mat-flat-button (click)="sendMessage()">Üzenet elküldése</button>
+            </div>
+        </div>
     </div>
 </div>

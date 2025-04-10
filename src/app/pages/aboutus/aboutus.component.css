@@ -3,6 +3,7 @@
     flex-direction: column;
 }
 
+/*Desktop*/
 @media (min-width: 900px){
     .container > div:nth-child(2n){
         align-self: flex-end;
@@ -43,16 +44,19 @@
     }
 }
 
+
+/*Mobil*/
 @media (max-width: 900px){
     .content-container img{
-        width: 30%;
-        height: 30%;
+        width: 70%;
+        height: 70%;
         aspect-ratio: 16 / 9;
-        margin: auto 0;
+        margin: 0 auto;
+        padding-bottom: 15px;
     }
 
-    .container > div:nth-child(2n){
-        flex-direction: row-reverse;
+    .container > div{
+        flex-direction: column;
     }
 }
 
