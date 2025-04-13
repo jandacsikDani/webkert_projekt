@@ -41,12 +41,20 @@ export class ReservationComponent {
           d.getMonth() === cellDate.getMonth() &&
           d.getDate() === cellDate.getDate()
         ) {
-          console.log('talál:', cellDate.toDateString());
           return 'foglalt';
         }
-        console.log('nem talál:', cellDate.toDateString() , d.toDateString());
       }
     }
     return '';
+  };
+
+  myDateFilter = (date: Date | null): boolean => {
+    if (!date) return false;
+  
+    return !this.highlightDates.some(d =>
+      d.getFullYear() === date.getFullYear() &&
+      d.getMonth() === date.getMonth() &&
+      d.getDate() === date.getDate()
+    );
   };
 }

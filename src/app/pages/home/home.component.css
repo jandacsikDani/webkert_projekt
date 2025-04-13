@@ -34,10 +34,6 @@
 
 }
 
-#misc{
-    margin: 0 15px;
-}
-
 
 /*Desktop*/
 @media (min-width: 900px){
@@ -72,6 +68,11 @@
     }
 
     .container > div:nth-child(2) > div:first-child{
+        margin-bottom: 20px;
+    }
+
+    #misc > div {
+        padding: 5px 20px 15px;
         margin-bottom: 20px;
     }
 }

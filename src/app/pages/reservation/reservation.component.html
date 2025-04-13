@@ -1,10 +1,4 @@
 <div class="container">
-    <mat-card appearance="raised">
-        <mat-card-title>Kedves Vendégünk!</mat-card-title>
-        <mat-card-content>
-            
-        </mat-card-content>
-    </mat-card>
     <div>
         <mat-stepper orientation="vertical" [linear]="true" #stepper>
             <mat-step>
@@ -37,13 +31,13 @@
                     <ng-template matStepLabel>Kérlek válassz dátumot és időt</ng-template>
                     <mat-form-field>
                         <mat-label>Nap</mat-label>
-                        <input matInput [matDatepicker]="picker" required>
+                        <input matInput [matDatepicker]="picker" required [matDatepickerFilter]="myDateFilter">
                         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker [dateClass]="dateClass" #picker></mat-datepicker>
                     </mat-form-field>
                     <br>
                     <mat-form-field>
-                        <mat-label>Pick a time</mat-label>
+                        <mat-label>Idő</mat-label>
                         <input matInput [matTimepicker]="time">
                         <mat-timepicker-toggle matIconSuffix [for]="time"/>
                         <mat-timepicker #time/>

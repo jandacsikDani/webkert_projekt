@@ -26,6 +26,6 @@ export class ContactComponent {
   phone = new FormControl('');
 
   sendMessage(){
-    console.log(this.name.value + " " + this.email.value);
+    console.log();
   }
 }

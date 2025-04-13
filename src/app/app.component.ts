@@ -5,14 +5,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSelectModule } from '@angular/material/select';
-import { FooterComponent } from './components/footer/footer.component';
 
 
 @Component({
   selector: 'app-root',
   imports: 
   [
-    FooterComponent,
     RouterOutlet,
     RouterLink,
     MatSelectModule,
