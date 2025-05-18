@@ -1,0 +1,50 @@
+#container{
+    display: flex;
+    flex-direction: column;
+}
+
+#news{
+    background-color: #1A1A19;
+    padding: 5px 20px 15px;
+}
+
+#news > div{
+    padding-inline-start: 10px;
+}
+
+.news-title{
+    margin-top: 10px;
+}
+.news-date{
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+#formContainer > form{
+    background-color: #1A1A19;
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin: 15px auto;
+
+}
+
+#formContainer > button{
+    max-width: 200px;
+}
+
+/*Desktop*/
+@media (min-width: 900px){
+    #news{
+        border-radius: 25px;
+        max-width: 70%;
+        margin:  0 auto;
+    }
+}
+
+/*Mobil*/
+@media(max-width: 900px){
+
+}

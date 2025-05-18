@@ -30,23 +30,25 @@
         <div>
             <h3>Üzenet küldése</h3>
             <div id="formContainer">
-                <mat-form-field>
-                    <mat-label>Név</mat-label>
-                    <input matInput type="text" [formControl]="name" id="nameInput">
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>E-mail cím</mat-label>
-                    <input matInput type="email" [formControl]="email" id="emailInput">
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Telefonszám</mat-label>
-                    <input matInput type="tel" id="phonenum" [formControl]="phone">
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Üzenet</mat-label>
-                    <textarea matInput [formControl]="message" id="message"></textarea>
-                </mat-form-field>
-                <button mat-flat-button (click)="sendMessage()">Üzenet elküldése</button>
+                <form [formGroup]="contact">
+                    <mat-form-field>
+                        <mat-label>Név</mat-label>
+                        <input matInput type="text" id="nameInput" formControlName="name">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>E-mail cím</mat-label>
+                        <input matInput type="email" id="emailInput" formControlName="email">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Telefonszám</mat-label>
+                        <input matInput type="tel" id="phonenum" formControlName="phone">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Üzenet</mat-label>
+                        <textarea matInput id="message" formControlName="message"></textarea>
+                    </mat-form-field>
+                    <button mat-flat-button (click)="sendMessage()">Üzenet elküldése</button>
+                </form>
             </div>
         </div>
     </div>

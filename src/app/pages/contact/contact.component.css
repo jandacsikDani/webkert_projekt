@@ -19,7 +19,7 @@
     justify-self: left;
 }
 
-#formContainer{
+#formContainer > form{
     background-color: #1A1A19;
     padding: 15px;
     border-radius: 15px;

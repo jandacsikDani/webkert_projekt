@@ -1,0 +1,9 @@
+#empty{
+    width: 40vw;
+    text-align: center;
+    margin: 0 auto;
+    background-color: var(--background-color);
+    margin-top: 10vh;
+    padding: 15px;
+    border-radius: 20px;
+}

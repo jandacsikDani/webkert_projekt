@@ -1,0 +1,17 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#empty{
+    margin: 0 auto;
+    background-color: var(--background-color);
+    margin-top: 10vh;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.highlighted {
+    background-color: #cc9600 !important; /* halvány zöld háttér */
+}

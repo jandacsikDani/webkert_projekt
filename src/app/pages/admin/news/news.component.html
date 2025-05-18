@@ -1,0 +1,31 @@
+<div id="container">
+    <div id="formContainer">
+        <form [formGroup]="newsInput">
+        <h3>Új hír kiírása</h3>
+        <mat-form-field>
+            <mat-label>Cím</mat-label>
+            <input matInput type="text" formControlName="title">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Hír</mat-label>
+            <textarea matInput formControlName="desc"></textarea>
+        </mat-form-field>
+        <button mat-flat-button (click)="addNews()">Hír kiírása</button>
+    </form>
+    </div>
+    <div id="news">
+        <h3>Jelenleg aktív hírek</h3>
+            @for (item of news; track $index) {
+                <div>
+                    <h4 class="news-title">{{item.title}}</h4>
+                    <p>{{item.desc}}</p>
+                    <div class="news-date">{{item.date | dateFormat}}</div>
+                </div>
+                <div>
+                    <button mat-flat-button (click)="editNews(item.id)">Módosítás</button>
+                    <button mat-flat-button (click)="deleteNews(item.id)">Törlés</button>
+                </div>
+                <mat-divider></mat-divider>
+            }
+        </div>
+</div>

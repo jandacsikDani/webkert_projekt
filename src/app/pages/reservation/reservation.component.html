@@ -1,57 +1,74 @@
-<div class="container">
-    <div>
-        <mat-stepper orientation="vertical" [linear]="true" #stepper>
-            <mat-step>
-                <ng-template matStepLabel>Foglaló adatinak megadása</ng-template>
+@if (!isLoading){
+    <div class="container">
+        <div>
+            <mat-stepper orientation="vertical" [linear]="true" #stepper>
+                <mat-step>
+                    <ng-template matStepLabel>Foglaló adatinak megadása</ng-template>
+                        <form [formGroup]="first">
+                            <mat-form-field>
+                                <mat-label>Vezetéknév</mat-label>
+                                <input matInput placeholder="Vezetéknév" formControlName="lastname" required>
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field>
+                                <mat-label>Keresztnév</mat-label>
+                                <input matInput placeholder="Keresztnév" formControlName="firstname" required>
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field>
+                                <mat-label>Telefonszám</mat-label>
+                                <input matInput placeholder="Telefonszám" formControlName="phone" required>
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field>
+                                <mat-label>Email cím</mat-label>
+                                <input matInput placeholder="Email cím" formControlName="email" required>
+                            </mat-form-field>
+                            <div>
+                                <button mat-button matStepperNext>Következő</button>
+                            </div>
+                        </form>
+                </mat-step>
+                <mat-step>
+                    <ng-template matStepLabel>Kérlek add meg hányan jönnétek</ng-template>
+                    <form [formGroup]="nop">
                         <mat-form-field>
-                            <mat-label>Vezetéknév</mat-label>
-                            <input matInput placeholder="Vezetéknév" formControlName="firstCtrl" required>
-                        </mat-form-field>
-                        <br>
-                        <mat-form-field>
-                            <mat-label>Keresztnév</mat-label>
-                            <input matInput placeholder="Keresztnév" formControlName="firstCtrl" required>
-                        </mat-form-field>
-                        <br>
-                        <mat-form-field>
-                            <mat-label>Telefonszám</mat-label>
-                            <input matInput placeholder="Telefonszám" formControlName="firstCtrl" required>
-                        </mat-form-field>
-                        <br>
-                        <mat-form-field>
-                            <mat-label>Email cím</mat-label>
-                            <input matInput placeholder="Email cím" formControlName="firstCtrl" required>
+                            <mat-label>Létszám</mat-label>
+                            <input matInput type="number" formControlName="nop" value="1" min="1" max="10">
                         </mat-form-field>
                         <div>
+                            <button mat-button matStepperPrevious>Előző</button>
                             <button mat-button matStepperNext>Következő</button>
                         </div>
-            </mat-step>
-            <mat-step>
-                <form>
-                    <ng-template matStepLabel>Kérlek válassz dátumot és időt</ng-template>
-                    <mat-form-field>
-                        <mat-label>Nap</mat-label>
-                        <input matInput [matDatepicker]="picker" required [matDatepickerFilter]="myDateFilter">
-                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker [dateClass]="dateClass" #picker></mat-datepicker>
-                    </mat-form-field>
-                    <br>
-                    <mat-form-field>
-                        <mat-label>Idő</mat-label>
-                        <input matInput [matTimepicker]="time">
-                        <mat-timepicker-toggle matIconSuffix [for]="time"/>
-                        <mat-timepicker #time/>
-                    </mat-form-field>
-                    <div>
-                        <button mat-button matStepperPrevious>Előző</button>
-                        <button mat-button matStepperNext>Következő</button>
-                    </div>
-                </form>
-            </mat-step>
-            <mat-step>
-                <ng-template matStepLabel>Kész</ng-template>
-                <p>A foglalás sikeres!</p>
-            </mat-step>
-        </mat-stepper>
+                    </form>
+                </mat-step>
+                <mat-step>
+                    <form [formGroup]="second">
+                        <ng-template matStepLabel>Kérlek válassz dátumot és időt</ng-template>
+                        <mat-form-field>
+                            <mat-label>Nap</mat-label>
+                            <input matInput [matDatepicker]="picker" required [matDatepickerFilter]="myDateFilter" formControlName="datePicker">
+                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker [dateClass]="dateClass" #picker></mat-datepicker>
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <mat-label>Idő</mat-label>
+                            <input matInput [matTimepicker]="time" formControlName="timePicker" >
+                            <mat-timepicker-toggle matIconSuffix [for]="time"/>
+                            <mat-timepicker #time [options]="customTimes" />
+                        </mat-form-field>
+                        <div>
+                            <button mat-button matStepperPrevious>Előző</button>
+                            <button mat-button matStepperNext>Következő</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step>
+                    <ng-template matStepLabel>Kész</ng-template>
+                    <button mat-flat-button (click)="storeReservation()">Foglalás rögzítése</button>
+                </mat-step>
+            </mat-stepper>
+        </div>
     </div>
-</div>
+}

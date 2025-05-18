@@ -4,18 +4,32 @@
     </button>
     <span id="title">Zöld Asztal Billiárd Terem</span>
     <a mat-button routerLink='/' class="topMenuItem">Főoldal</a>
-    <a mat-button routerLink='/reservation' class="topMenuItem">Időpont Foglalás</a>
+    <a mat-button routerLink='/reservation' class="topMenuItem" [hidden]="reservationHidden">Időpont Foglalás</a>
+    <a mat-button routerLink='/reservations' class="topMenuItem" [hidden]="reservationsHidden">Foglalásaim</a>
+    <a mat-button routerLink='/login' class="topMenuItem" [hidden]="loginHidden">Bejelentkezés</a>
+    <a mat-button routerLink='/register' class="topMenuItem" [hidden]="registerHidden">Regisztráció</a>
     <a mat-button routerLink='/aboutus' class="topMenuItem">Rólunk</a>
     <a mat-button routerLink="/contact" class="topMenuItem">Kapcsolat</a>
+    <a mat-button routerLink="/admin/messages" class="topMenuItem" [hidden]="adminHidden">Üzenetek</a>
+    <a mat-button routerLink="/admin/reservations" class="topMenuItem" [hidden]="adminHidden">Foglalások kezelése</a>
+    <a mat-button routerLink="/admin/news" class="topMenuItem" [hidden]="adminHidden">Hírek kezelése</a>
+    <a mat-button (click)="onSignOut()" class="topMenuItem" [hidden]="logoutHidden">Kijelentkezés</a>
 </mat-toolbar>
 
 <mat-sidenav-container>
     <mat-sidenav #sidenav [fixedInViewport]="true" [fixedTopGap]="60" mode="over">
         <div class="sideNavItems">
             <div><a (click)="sidenav.close()" mat-button routerLink='/' class="sideMenuItem"><mat-icon>home</mat-icon>Főoldal</a></div>
-            <div><a (click)="sidenav.close()" mat-button routerLink='/reservation' class="sideMenuItem"><mat-icon>shopping_cart</mat-icon>Időpont Foglalás</a></div>
+            <div><a (click)="sidenav.close()" mat-button routerLink='/reservation' class="sideMenuItem" [hidden]="reservationHidden"><mat-icon>shopping_cart</mat-icon>Időpont Foglalás</a></div>
+            <div><a (click)="sidenav.close()" mat-button routerLink='/reservations' class="sideMenuItem" [hidden]="reservationsHidden"><mat-icon>event_upcoming</mat-icon>Foglalásaim</a></div>
+            <div><a (click)="sidenav.close()" mat-button routerLink='/login' class="sideMenuItem" [hidden]="loginHidden"><mat-icon>login</mat-icon>Bejelentkezés</a></div>
+            <div><a (click)="sidenav.close()" mat-button routerLink='/register' class="sideMenuItem" [hidden]="registerHidden"><mat-icon>person_add</mat-icon>Regisztráció</a></div>
             <div><a (click)="sidenav.close()" mat-button routerLink='/aboutus' class="sideMenuItem"><mat-icon>star</mat-icon>Rólunk</a></div>
             <div><a (click)="sidenav.close()" mat-button routerLink='/contact' class="sideMenuItem"><mat-icon>call</mat-icon>Kapcsolat</a></div>
+            <div><a (click)="sidenav.close()" mat-button routerLink='/admin/messages' class="sideMenuItem" [hidden]="adminHidden"><mat-icon>notifications</mat-icon>Üzenetek kezelése</a></div>
+            <div><a (click)="sidenav.close()" mat-button routerLink='/admin/reservations' class="sideMenuItem" [hidden]="adminHidden"><mat-icon>admin_panel_settings</mat-icon>Foglalások kezelése</a></div>
+            <div><a (click)="sidenav.close()" mat-button routerLink='/admin/news' class="sideMenuItem" [hidden]="adminHidden"><mat-icon>campaign</mat-icon>Hírek kezelése</a></div>
+            <div><a (click)="onSignOut()" mat-button class="sideMenuItem" [hidden]="logoutHidden"><mat-icon>logout</mat-icon>Kijelentkezés</a></div>
         </div>
     </mat-sidenav>
     <mat-sidenav-content>

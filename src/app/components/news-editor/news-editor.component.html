@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Hír szerkesztése</h2>
+<mat-dialog-content>
+    <form [formGroup]="news">
+        <mat-form-field>
+            <mat-label>Cím</mat-label>
+            <input matInput type="text" formControlName="title">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Hír</mat-label>
+            <textarea matInput formControlName="desc"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Dátum</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="datePicker">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-flat-button (click)="dialogRef.close(false)">Elvetés</button>
+    <button mat-flat-button (click)="dialogRef.close(news)">Mentés</button>
+</mat-dialog-actions>

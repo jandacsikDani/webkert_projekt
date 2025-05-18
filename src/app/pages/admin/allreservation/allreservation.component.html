@@ -1,0 +1,32 @@
+<div id="container">
+    @if(isEmpty){
+        <div id="empty">Nincsenek foglalások</div>
+    }
+    @if(!isEmpty){
+        <table mat-table [dataSource]="dataSource">
+            <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef>Dátum</th>
+                <td mat-cell *matCellDef="let reservation"> {{reservation.date | datetimeformat}} </td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Név</th>
+                <td mat-cell *matCellDef="let reservation">{{reservation.name['lastname'] + " " + reservation.name['firstname']}}</td>
+            </ng-container>
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef>E-mail</th>
+                <td mat-cell *matCellDef="let reservation">{{reservation.email}}</td>
+            </ng-container>
+            <ng-container matColumnDef="phone">
+                <th mat-header-cell *matHeaderCellDef>E-mail</th>
+                <td mat-cell *matCellDef="let reservation">{{reservation.phone}}</td>
+            </ng-container>
+            <ng-container matColumnDef="nop">
+                <th mat-header-cell *matHeaderCellDef>Létszám</th>
+                <td mat-cell *matCellDef="let reservation">{{reservation.nop}}</td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+    }
+</div>

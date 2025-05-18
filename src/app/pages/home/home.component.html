@@ -10,7 +10,7 @@
                 <div>
                     <h4 class="news-title">{{item.title}}</h4>
                     <p>{{item.desc}}</p>
-                    <div class="news-date">{{item.date}}</div>
+                    <div class="news-date">{{ item.date | dateFormat }}</div>
                 </div>
                 <mat-divider></mat-divider>
             }
