@@ -8,4 +8,4 @@
 
 ## User
 ### email: user@zoldasztal.hu
-### zolduser
+### jelszó: zolduser
